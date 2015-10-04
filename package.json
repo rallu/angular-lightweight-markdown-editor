@@ -1,0 +1,20 @@
+{
+  "name": "angular-markdown-editor",
+  "version": "0.0.1",
+  "description": "Visual markdown editor for angular",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "markdown",
+    "wysiwyg",
+    "showdown"
+  ],
+  "author": "Juha-Pekka Rajaniemi <juha.rajaniemi@gmail.com>",
+  "license": "MIT"
+}

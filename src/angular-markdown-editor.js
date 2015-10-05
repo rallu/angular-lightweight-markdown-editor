@@ -23,6 +23,8 @@
     }
 
     function markdownController($sce) {
+        this.preview = false;
+
         this.action = function(name) {
             this.ngModel = actions[name](this.ngModel, getSelectionInfo());
         };
@@ -43,11 +45,14 @@
         bold: function(model, selection) {
             return helpers.surraund(model, selection.start, selection.end - selection.start, "**", "**");
         },
-        underline: function(model, selection) {
-            return helpers.surraund(model, selection.start, selection.end - selection.start, "__", "__");
+        italic: function(model, selection) {
+            return helpers.surraund(model, selection.start, selection.end - selection.start, "*", "*");
         },
         bullets: function(model, selection) {
             return helpers.startLinesWith(model, selection.start, selection.end, "* ");
+        },
+        heading: function(model, selection) {
+            return helpers.startLinesWith(model, selection.start, selection.end, "#");
         }
     };
 

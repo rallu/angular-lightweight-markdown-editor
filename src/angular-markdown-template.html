@@ -7,10 +7,10 @@
             Bold
         </li>
         <li
-            ng-click="markdownEditorCtrl.action('underline')"
-            class="markdown-editor__actions__underline"
+            ng-click="markdownEditorCtrl.action('italic')"
+            class="markdown-editor__actions__italic"
             >
-            Underline
+            Italic
         </li>
         <li
             ng-click="markdownEditorCtrl.action('bullets')"
@@ -18,7 +18,25 @@
             >
             Bullets
         </li>
+        <li
+            ng-click="markdownEditorCtrl.action('heading')"
+            class="markdown-editor__actions__heading"
+            >
+            Heading
+        </li>
+        <li
+            ng-click="markdownEditorCtrl.preview = !markdownEditorCtrl.preview"
+            >
+            Preview
+        </li>
     </ul>
-    <textarea ng-model="markdownEditorCtrl.ngModel"></textarea>
-    <div ng-bind-html="markdownEditorCtrl.getHTML()"></div>
+    <div class="markdown-editor__editorarea">
+        <div ng-class="{nopreview: !markdownEditorCtrl.preview}">
+            <textarea ng-model="markdownEditorCtrl.ngModel"></textarea>
+        </div>
+        <div
+            ng-show="markdownEditorCtrl.preview"
+            ng-bind-html="markdownEditorCtrl.getHTML()">
+        </div>
+    </div>
 </div>

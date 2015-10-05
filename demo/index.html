@@ -1,13 +1,22 @@
-<html>
+<html ng-app="demo">
     <head>
         <meta charset="utf-8">
         <title>Angular Markdown Editor</title>
+        <link rel="stylesheet" href="../dist/angular-markdown-editor.css">
         <script src="../bower_components/angular/angular.min.js"></script>
         <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-        <script src="../bower_components/showdown/showdown.min.js"></script>
-        <script src="../src/js/angular-markdown-editor.js"></script>
+        <script src="../bower_components/showdown/dist/showdown.min.js"></script>
+        <script src="../src/angular-markdown-editor.js"></script>
+        <script>
+            angular.module("demo", [
+                "angular-markdown-editor"
+            ]).controller("demoCtrl", function() {
+                this.data = "# Hello\n\nThis is a markdown test\n\nThese are\ndifferent length\nsentences\nwe need even more\nof these short few word things";
+            });
+        </script>
     </head>
-    <body>
-        <markdown-editor></markdown-editor>
+    <body ng-controller="demoCtrl as ctrl">
+        {{ctrl | json}}
+        <markdown-editor ng-model="ctrl.data"></markdown-editor>
     </body>
 </html>

@@ -1,0 +1,24 @@
+<div class="markdown-editor">
+    <ul class="markdown-editor__actions">
+        <li
+            ng-click="markdownEditorCtrl.action('bold')"
+            class="markdown-editor__actions__bold"
+            >
+            Bold
+        </li>
+        <li
+            ng-click="markdownEditorCtrl.action('underline')"
+            class="markdown-editor__actions__underline"
+            >
+            Underline
+        </li>
+        <li
+            ng-click="markdownEditorCtrl.action('bullets')"
+            class="markdown-editor__actions__bullets"
+            >
+            Bullets
+        </li>
+    </ul>
+    <textarea ng-model="markdownEditorCtrl.ngModel"></textarea>
+    <div ng-bind-html="markdownEditorCtrl.getHTML()"></div>
+</div>

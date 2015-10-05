@@ -1,0 +1,23 @@
+.markdown-editor {
+
+    textarea {
+        width: 100%;
+        min-height: 400px;
+    }
+
+    &__actions {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            display: inline-block;
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        &__bold {
+
+        }
+    }
+}

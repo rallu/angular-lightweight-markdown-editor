@@ -15,6 +15,11 @@
     "wysiwyg",
     "showdown"
   ],
+  "devDependencies": {
+      "gulp": "*",
+      "gulp-sass": "*",
+      "gulp-pleeease": "*"
+  },
   "author": "Juha-Pekka Rajaniemi <juha.rajaniemi@gmail.com>",
   "license": "MIT"
 }

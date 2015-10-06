@@ -39,10 +39,15 @@ $editor-background: #fff;
 
         & > div {
             width: 50%;
+            box-sizing: border-box;
 
             &.nopreview {
                 width: 100%;
             }
+        }
+
+        &__preview {
+            padding: 20px;
         }
 
         textarea {

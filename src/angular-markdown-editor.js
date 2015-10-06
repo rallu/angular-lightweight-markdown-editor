@@ -68,6 +68,22 @@
         },
         quote: function(model, selection) {
             return helpers.startLinesWith(model, selection.start, selection.end, "> ");
+        },
+        code: function(model, selection) {
+            var startpos = model.substr(0, selection.start).lastIndexOf("\n") + 1;
+            var nextNewLine = model.substr(selection.end).indexOf("\n");
+            if (nextNewLine == -1) {
+                var endpos = model.length;
+            } else {
+                var endpos = selection.end + nextNewLine + 1;
+            }
+            return [
+                model.substr(0, startpos),
+                "```\n",
+                model.substr(startpos, endpos - startpos),
+                "\n```\n",
+                model.substr(endpos)
+            ].join("");
         }
     };
 

@@ -1,31 +1,36 @@
 <div class="markdown-editor">
     <ul class="markdown-editor__actions">
-        <li
-            ng-click="markdownEditorCtrl.action('bold')"
-            class="markdown-editor__actions__bold"
-            >
-            Bold
+        <li ng-click="markdownEditorCtrl.action('bold')">
+            <i class="fa fa-bold"></i>
         </li>
-        <li
-            ng-click="markdownEditorCtrl.action('italic')"
-            class="markdown-editor__actions__italic"
-            >
-            Italic
+        <li ng-click="markdownEditorCtrl.action('italic')">
+            <i class="fa fa-italic"></i>
         </li>
-        <li
-            ng-click="markdownEditorCtrl.action('bullets')"
-            class="markdown-editor__actions__bullets"
-            >
-            Bullets
+        <li ng-click="markdownEditorCtrl.action('strikethrough')">
+            <i class="fa fa-strikethrough"></i>
         </li>
-        <li
-            ng-click="markdownEditorCtrl.action('heading')"
-            class="markdown-editor__actions__heading"
-            >
-            Heading
+        <li ng-click="markdownEditorCtrl.action('heading')">
+            <i class="fa fa-header"></i>
+        </li>
+        <li ng-click="markdownEditorCtrl.action('bullets')">
+            <i class="fa fa-list"></i>
+        </li>
+        <li ng-click="markdownEditorCtrl.action('indent')">
+            <i class="fa fa-indent"></i>
+        </li>
+        <li ng-click="markdownEditorCtrl.action('code')">
+            <i class="fa fa-code"></i>
+        </li>
+        <li ng-click="markdownEditorCtrl.action('link')">
+            <i class="fa fa-link"></i>
+        </li>
+        <li ng-click="markdownEditorCtrl.action('quote')">
+            <i class="fa fa-quote-right"></i>
         </li>
         <li
             ng-click="markdownEditorCtrl.preview = !markdownEditorCtrl.preview"
+            ng-show="markdownEditorCtrl.showdownEnabled"
+            ng-class="{enabled: markdownEditorCtrl.preview}"
             >
             Preview
         </li>
@@ -35,6 +40,7 @@
             <textarea ng-model="markdownEditorCtrl.ngModel"></textarea>
         </div>
         <div
+            ng-if="markdownEditorCtrl.showdownEnabled"
             ng-show="markdownEditorCtrl.preview"
             ng-bind-html="markdownEditorCtrl.getHTML()">
         </div>

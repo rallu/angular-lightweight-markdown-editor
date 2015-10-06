@@ -4,7 +4,9 @@
     ]).directive("markdownEditor", angularMarkdownEditor);
 
     var textareaElement;
-    var mdConverter = new showdown.Converter();
+    if (typeof showdown !== "undefined") {
+        var mdConverter = new showdown.Converter();
+    }
 
     function angularMarkdownEditor() {
         return {
@@ -24,12 +26,16 @@
 
     function markdownController($sce) {
         this.preview = false;
+        this.showdownEnabled = (typeof showdown !== "undefined");
 
         this.action = function(name) {
             this.ngModel = actions[name](this.ngModel, getSelectionInfo());
         };
 
         this.getHTML = function() {
+            if (!this.showdownEnabled) {
+                return "";
+            }
             return $sce.trustAsHtml(mdConverter.makeHtml(this.ngModel));
         };
     }
@@ -53,6 +59,15 @@
         },
         heading: function(model, selection) {
             return helpers.startLinesWith(model, selection.start, selection.end, "#");
+        },
+        strikethrough: function(model, selection) {
+            return helpers.surraund(model, selection.start, selection.end - selection.start, "--", "--");
+        },
+        indent: function(model, selection) {
+            return helpers.startLinesWith(model, selection.start, selection.end, "\t");
+        },
+        quote: function(model, selection) {
+            return helpers.startLinesWith(model, selection.start, selection.end, "> ");
         }
     };
 

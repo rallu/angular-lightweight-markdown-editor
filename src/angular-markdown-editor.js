@@ -29,7 +29,10 @@
         this.showdownEnabled = (typeof showdown !== "undefined");
 
         this.action = function(name) {
-            this.ngModel = actions[name](this.ngModel, getSelectionInfo());
+            var result = actions[name](this.ngModel, getSelectionInfo());
+            if (result !== false) {
+                this.ngModel = result;
+            }
         };
 
         this.getHTML = function() {
@@ -43,7 +46,8 @@
     function getSelectionInfo() {
         return {
             start: textareaElement.selectionStart,
-            end: textareaElement.selectionEnd
+            end: textareaElement.selectionEnd,
+            length: textareaElement.selectionEnd - textareaElement.selectionStart
         };
     }
 
@@ -83,6 +87,27 @@
                 model.substr(startpos, endpos - startpos),
                 "\n```\n",
                 model.substr(endpos)
+            ].join("");
+        },
+        link: function(model, selection) {
+            if (selection.length > 0) {
+                var text = model.substr(selection.start, selection.length);
+            } else {
+                var text = prompt("Please provide link text");
+                if (!text) {
+                    return false;
+                }
+            }
+            var link = prompt("Please provide link URL");
+            if (!link) {
+                return false;
+            }
+
+            return [
+                model.substr(0, selection.start),
+                "[" + text + "]",
+                "(" + link + ")",
+                model.substr(selection.end)
             ].join("");
         }
     };

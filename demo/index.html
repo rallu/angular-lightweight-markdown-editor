@@ -25,6 +25,9 @@
     </head>
     <body ng-controller="demoCtrl as ctrl">
         {{ctrl | json}}
-        <markdown-editor ng-model="ctrl.data"></markdown-editor>
+        <markdown-editor
+            ng-model="ctrl.data"
+            preview-text="Esikatsele"
+            ></markdown-editor>
     </body>
 </html>

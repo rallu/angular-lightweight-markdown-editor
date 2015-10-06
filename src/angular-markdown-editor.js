@@ -16,7 +16,8 @@
             controllerAs: "markdownEditorCtrl",
             scope: true,
             bindToController: {
-                ngModel: "="
+                ngModel: "=",
+                previewText: "@"
             },
             link: function(scope, element) {
                 textareaElement = element.find("textarea")[0];
@@ -27,6 +28,10 @@
     function markdownController($sce) {
         this.preview = false;
         this.showdownEnabled = (typeof showdown !== "undefined");
+
+        if (!this.previewText) {
+            this.previewText = "Preview";
+        }
 
         this.action = function(name) {
             var result = actions[name](this.ngModel, getSelectionInfo());

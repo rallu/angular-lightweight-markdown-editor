@@ -1,7 +1,9 @@
 $main-background: #f2f1f7;
 $editor-background: #fff;
 
+@import "fonts.scss";
 .markdown-editor {
+
     background: $main-background;
     padding: 4px;
     border-radius: 2px;
@@ -14,7 +16,7 @@ $editor-background: #fff;
 
         > li {
             display: inline-block;
-            padding: 5px 8px 3px 8px;
+            padding: 5px 8px 5px 8px;
             border-radius: 2px;
             color: #333;
             background: rgba(0,0,0,0.05);

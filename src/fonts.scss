@@ -1,0 +1,57 @@
+@font-face {
+	font-family: 'ame-font';
+	src: url('fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="ame-"], [class*=" ame-"] {
+	font-family: 'ame-font';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ame-bold:before {
+	content: "\f032";
+}
+.ame-italic:before {
+	content: "\f033";
+}
+.ame-indent:before {
+	content: "\f03c";
+}
+.ame-arrows-h:before {
+	content: "\f07e";
+}
+.ame-chain:before {
+	content: "\f0c1";
+}
+.ame-link:before {
+	content: "\f0c1";
+}
+.ame-list-ul:before {
+	content: "\f0ca";
+}
+.ame-list-ol:before {
+	content: "\f0cb";
+}
+.ame-strikethrough:before {
+	content: "\f0cc";
+}
+.ame-quote-right:before {
+	content: "\f10e";
+}
+.ame-code:before {
+	content: "\f121";
+}
+.ame-header:before {
+	content: "\f1dc";
+}

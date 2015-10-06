@@ -21,6 +21,7 @@
     "gulp-angular-extender": "^0.1.0",
     "gulp-angular-inject-module": "^0.1.0",
     "gulp-angular-templatecache": "^1.7.0",
+    "gulp-base64": "^0.1.3",
     "gulp-concat": "^2.6.0",
     "gulp-htmlmin": "^1.2.0",
     "gulp-if": "^2.0.0",

@@ -10,16 +10,25 @@ var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
 var uglify = require('gulp-uglify');
 var del = require('del');
+var base64 = require('gulp-base64');
 
 gulp.task("sass", function() {
-    return gulp.src("src/*.scss")
+    return gulp.src("src/angular-markdown-editor.scss")
     .pipe(sass())
     .pipe(pleeease())
     .pipe(gulp.dest("dist/"));
 });
 
-gulp.task("default", ['sass', 'templateCache', 'js', 'cleanAfterBuild'], function() {
-    gulp.watch("src/*.scss", ['sass']);
+gulp.task("base64fonts", ['sass'], function() {
+    return gulp.src('dist/angular-markdown-editor.css')
+        .pipe(base64({
+            baseDir: "src"
+        }))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task("default", ['base64fonts', 'templateCache', 'js', 'cleanAfterBuild'], function() {
+    gulp.watch("src/*.scss", ['base64fonts']);
     gulp.watch(["src/**/*.html", "src/**/*.js"], ['templateCache', 'js', 'cleanAfterBuild']);
 });
 
@@ -56,4 +65,4 @@ gulp.task("cleanAfterBuild", ["js"], function() {
     ]);
 });
 
-gulp.task("release", ['sass', 'templateCache', 'js', 'cleanAfterBuild']);
+gulp.task("release", ['base64fonts', 'templateCache', 'js', 'cleanAfterBuild']);

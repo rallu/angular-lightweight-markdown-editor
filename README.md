@@ -1,10 +1,9 @@
-Angular markdown editor
-=======================
+Angular lightweight markdown editor
+===================================
 
-angular-lightweight-markdown-editor is extremely light weight editor for markdown.
-It doesn't use any fancy text editors but just that basic textarea. It has few
-buttons for newbie markdown users to edit text easily. This means you can add
-it to your project without fear of huge transfer sizes.
+angular-lightweight-markdown-editor is extremely light weight editor (v0.0.3 12kb) for markdown. It doesn't use any fancy text editors but just that basic `textarea`. This means you can add it to your project without fear of huge transfer sizes.
+
+Requires only angular.js and angular-sanitize.js libraries.
 
 Editor displays preview if showdown.js is included in to the project.
 
@@ -23,6 +22,7 @@ Add dependecy to your angular application
 
 ```
 angular.module("myapp", [
+    "ngSanitize",
     "angular-lightweight-markdown-editor"
 ]);
 ```
@@ -30,7 +30,7 @@ angular.module("myapp", [
 Include editor into your html
 
 ```
-<angular-lightweight-markdown-editor></angular-lightweight-markdown-editor>
+<markdown-editor></markdown-editor>
 ```
 
 [See demo for example code](demo/index.html)

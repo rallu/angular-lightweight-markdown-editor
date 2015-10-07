@@ -4,6 +4,12 @@
     ]).directive("markdownEditor", angularMarkdownEditor);
 
     var textareaElement;
+    var translationTexts = {
+        "textPreview": "Preview",
+        "textProvideText": "Please provide link text",
+        "textProvideLink": "Please provide link URL"
+    };
+
     if (typeof showdown !== "undefined") {
         var mdConverter = new showdown.Converter();
     }
@@ -17,7 +23,9 @@
             scope: true,
             bindToController: {
                 ngModel: "=",
-                previewText: "@"
+                textPreview: "@",
+                textProvideText: "@",
+                textProvideLink: "@"
             },
             link: function(scope, element) {
                 textareaElement = element.find("textarea")[0];
@@ -29,9 +37,12 @@
         this.preview = false;
         this.showdownEnabled = (typeof showdown !== "undefined");
 
-        if (!this.previewText) {
-            this.previewText = "Preview";
+        for (var key in translationTexts) {
+            if (angular.isDefined(this[key])) {
+                translationTexts[key] = this[key];
+            }
         }
+        this.translations = translationTexts;
 
         this.action = function(name) {
             var result = actions[name](this.ngModel, getSelectionInfo());
@@ -98,12 +109,12 @@
             if (selection.length > 0) {
                 var text = model.substr(selection.start, selection.length);
             } else {
-                var text = prompt("Please provide link text");
+                var text = prompt(translationTexts["textProvideText"]);
                 if (!text) {
                     return false;
                 }
             }
-            var link = prompt("Please provide link URL");
+            var link = prompt(translationTexts["textProvideLink"]);
             if (!link) {
                 return false;
             }

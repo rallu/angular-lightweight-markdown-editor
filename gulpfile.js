@@ -11,6 +11,7 @@ var ngAnnotate = require('gulp-ng-annotate');
 var uglify = require('gulp-uglify');
 var del = require('del');
 var base64 = require('gulp-base64');
+var jshint = require('gulp-jshint');
 
 gulp.task("sass", function() {
     return gulp.src("src/angular-markdown-editor.scss")
@@ -47,7 +48,12 @@ gulp.task("templateCache", function() {
     .pipe(gulp.dest("dist/"));
 });
 
-gulp.task("js", ["templateCache"], function() {
+gulp.task("hint", function() {
+    return gulp.src(["src/**/*.js"])
+    .pipe(jshint())
+});
+
+gulp.task("js", ["templateCache", "hint"], function() {
     var angularExtenederOptions = {};
     angularExtenederOptions["angular-markdown-editor"] = ["angular-markdown-editor-templates"];
 

@@ -28,4 +28,4 @@ Include CSS and JS to project
 > <link  href="angular-markdown-editor/dist/angular-markdown-editor.css" rel="stylesheet">
 > <script src="angular-markdown-editor/dist/angular-markdown-editor.min.js"></script>
 
-[See demo for example code](blob/master/demo/index.html)
+[See demo for example code](demo/index.html)

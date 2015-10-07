@@ -9,6 +9,7 @@
         <li ng-click="markdownEditorCtrl.action('strikethrough')">
             <i class="ame-strikethrough"></i>
         </li>
+        <li class="separator"></li>
         <li ng-click="markdownEditorCtrl.action('heading')">
             <i class="ame-header"></i>
         </li>
@@ -21,16 +22,19 @@
         <li ng-click="markdownEditorCtrl.action('code')">
             <i class="ame-code"></i>
         </li>
+        <li class="separator"></li>
         <li ng-click="markdownEditorCtrl.action('link')">
             <i class="ame-link"></i>
         </li>
         <li ng-click="markdownEditorCtrl.action('quote')">
             <i class="ame-quote-right"></i>
         </li>
+        <li class="separator"></li>
         <li
             ng-click="markdownEditorCtrl.preview = !markdownEditorCtrl.preview"
             ng-show="markdownEditorCtrl.showdownEnabled"
             ng-class="{enabled: markdownEditorCtrl.preview}"
+            class="preview"
             >
             {{markdownEditorCtrl.translations.textPreview}}
         </li>

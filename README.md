@@ -38,7 +38,7 @@ Include editor into your html
 ## Parameters
 
 | Parameter | Description | Default |
-| --------- |:-----------:|:--------|
+| --------- |:------------|:--------|
 | ng-model  | Data model to use in textarea | |
 | text-preview | Button text for preview | Preview |
 | text-propose-text | Prompt text to as link text | Please provide link text |

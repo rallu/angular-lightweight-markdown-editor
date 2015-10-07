@@ -14,14 +14,14 @@ var base64 = require('gulp-base64');
 var jshint = require('gulp-jshint');
 
 gulp.task("sass", function() {
-    return gulp.src("src/angular-markdown-editor.scss")
+    return gulp.src("src/angular-lightweight-markdown-editor.scss")
     .pipe(sass())
     .pipe(pleeease())
     .pipe(gulp.dest("dist/"));
 });
 
 gulp.task("base64fonts", ['sass'], function() {
-    return gulp.src('dist/angular-markdown-editor.css')
+    return gulp.src('dist/angular-lightweight-markdown-editor.css')
         .pipe(base64({
             baseDir: "src"
         }))
@@ -41,7 +41,7 @@ gulp.task("templateCache", function() {
         removeCommens: true
     }))
     .pipe(templateCache({
-        module: "angular-markdown-editor-templates",
+        module: "angular-lightweight-markdown-editor-templates",
         root: "",
         standalone: true
     }))
@@ -55,11 +55,11 @@ gulp.task("hint", function() {
 
 gulp.task("js", ["templateCache", "hint"], function() {
     var angularExtenederOptions = {};
-    angularExtenederOptions["angular-markdown-editor"] = ["angular-markdown-editor-templates"];
+    angularExtenederOptions["angular-lightweight-markdown-editor"] = ["angular-lightweight-markdown-editor-templates"];
 
     return gulp.src(["dist/templates.js", "src/**/*.js"])
-    .pipe(gulpif(/(.*)angular-markdown-editor\.js/, gulpAngularExtender(angularExtenederOptions)))
-    .pipe(concat("angular-markdown-editor.min.js"))
+    .pipe(gulpif(/(.*)angular-lightweight-markdown-editor\.js/, gulpAngularExtender(angularExtenederOptions)))
+    .pipe(concat("angular-lightweight-markdown-editor.min.js"))
     .pipe(ngAnnotate())
     .pipe(uglify())
     .pipe(gulp.dest("dist"));

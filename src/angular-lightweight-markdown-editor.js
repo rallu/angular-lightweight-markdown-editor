@@ -1,5 +1,5 @@
 (function() {
-    angular.module("angular-markdown-editor", [
+    angular.module("angular-lightweight-markdown-editor", [
         "ngSanitize"
     ]).directive("markdownEditor", angularMarkdownEditor);
 
@@ -17,7 +17,7 @@
     function angularMarkdownEditor() {
         return {
             restrict: "E",
-            templateUrl: "../src/angular-markdown-template.html",
+            templateUrl: "angular-lightweight-markdown-template.html",
             controller: markdownController,
             controllerAs: "markdownEditorCtrl",
             scope: true,

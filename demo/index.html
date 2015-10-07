@@ -10,14 +10,14 @@
         <!-- Optional dependency -->
         <script src="../bower_components/showdown/dist/showdown.min.js"></script>
 
-        <!-- include angular-markdown-editor -->
-        <link  href="../dist/angular-markdown-editor.css" rel="stylesheet">
-        <script src="../dist/angular-markdown-editor.min.js"></script>
+        <!-- include angular-lightweight-markdown-editor -->
+        <link  href="../dist/angular-lightweight-markdown-editor.css" rel="stylesheet">
+        <script src="../dist/angular-lightweight-markdown-editor.min.js"></script>
 
         <!-- demo application that uses it -->
         <script>
             angular.module("demo", [
-                "angular-markdown-editor"
+                "angular-lightweight-markdown-editor"
             ]).controller("demoCtrl", function() {
                 this.data = "# Hello\n\nThis is a markdown test\n\nThese are\ndifferent length\nsentences\nwe need even more\nof these short few word things";
             });

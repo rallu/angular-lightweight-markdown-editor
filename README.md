@@ -1,7 +1,7 @@
 Angular markdown editor
 =======================
 
-angular-markdown-editor is extremely light weight editor for markdown.
+angular-lightweight-markdown-editor is extremely light weight editor for markdown.
 It doesn't use any fancy text editors but just that basic textarea. It has few
 buttons for newbie markdown users to edit text easily. This means you can add
 it to your project without fear of huge transfer sizes.
@@ -12,25 +12,25 @@ Editor displays preview if showdown.js is included in to the project.
 
 Install using bower
 
-> bower install angular-markdown-editor
+> bower install angular-lightweight-markdown-editor
 
 Include CSS and JS to project
 
-> <link  href="angular-markdown-editor/dist/angular-markdown-editor.css" rel="stylesheet">
-> <script src="angular-markdown-editor/dist/angular-markdown-editor.min.js"></script>
+> <link  href="angular-lightweight-markdown-editor/dist/angular-lightweight-markdown-editor.css" rel="stylesheet">
+> <script src="angular-lightweight-markdown-editor/dist/angular-lightweight-markdown-editor.min.js"></script>
 
 Add dependecy to your angular application
 
 ```
 angular.module("myapp", [
-    "angular-markdown-editor"
+    "angular-lightweight-markdown-editor"
 ]);
 ```
 
 Include editor into your html
 
 ```
-<angular-markdown-editor></angular-markdown-editor>
+<angular-lightweight-markdown-editor></angular-lightweight-markdown-editor>
 ```
 
 [See demo for example code](demo/index.html)

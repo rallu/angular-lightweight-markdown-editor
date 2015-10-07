@@ -1,12 +1,12 @@
 {
-  "name": "angular-markdown-editor",
+  "name": "angular-lightweight-markdown-editor",
   "version": "0.0.3",
   "authors": [
     "Juha-Pekka Rajaniemi <juha.rajaniemi@gmail.com>"
   ],
   "main": [
-    "dist/angular-markdown-editor.min.js",
-    "dist/angular-markdown-editor.css"
+    "dist/angular-lightweight-markdown-editor.min.js",
+    "dist/angular-lightweight-markdown-editor.css"
   ],
   "description": "Visual markdown editor for angular",
   "keywords": [

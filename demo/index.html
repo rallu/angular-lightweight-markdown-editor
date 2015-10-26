@@ -24,12 +24,21 @@
         </script>
     </head>
     <body ng-controller="demoCtrl as ctrl">
-        {{ctrl | json}}
-        <markdown-editor
-            ng-model="ctrl.data"
-            text-preview="Esikatsele"
-            text-provide-text="Anna sivuston nimi"
-            text-provide-link="Anna linkki sivustolle"
-            ></markdown-editor>
+        <form name="form">
+            <markdown-editor
+                ng-model="ctrl.data"
+                text-preview="Preview"
+                text-provide-text="Site name"
+                text-provide-link="Site link"
+                name="thearea"
+                maxlength="40"
+                minlength="10"
+                placeholder="Input your text"
+                required
+                ></markdown-editor>
+            </div>
+
+            <input type="submit" value="Test submit button">
+        </form>
     </body>
 </html>

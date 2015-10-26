@@ -27,8 +27,18 @@
                 textProvideText: "@",
                 textProvideLink: "@"
             },
-            link: function(scope, element) {
+            require: ['^form', 'ngModel'],
+            link: function(scope, element, attrs, ctrls) {
                 textareaElement = element.find("textarea")[0];
+                var form = ctrls[0];
+                var copyAttrToTextarea = [
+                    "name", "required", "minlength", "maxlength", "placeholder", "selectionDirection", "selectionStart", "selectionEnd", "spellcheck"
+                ];
+                angular.forEach(copyAttrToTextarea, function(param) {
+                    if (attrs[param]) {
+                        textareaElement[param] = attrs[param];
+                    }
+                });
             }
         }
     }

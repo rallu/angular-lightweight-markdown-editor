@@ -43,3 +43,12 @@ Include editor into your html
 | text-preview | Button text for preview | Preview |
 | text-propose-text | Prompt text to as link text | Please provide link text |
 | text-propose-link | Prompt text asking for link url | Please provide link URL |
+| name | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+| required | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+| minlength  | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+| maxlength | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+| placeholder | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+| selectionDirection | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+| selectionStart | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+| selectionEnd | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+| spellcheck | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |

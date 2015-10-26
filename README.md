@@ -7,6 +7,8 @@ Requires only angular.js and angular-sanitize.js libraries.
 
 Editor displays preview if showdown.js is included in to the project.
 
+![screenshot](https://raw.githubusercontent.com/rallu/angular-lightweight-markdown-editor/master/screenshot.png)
+
 ## Usage
 
 Install using bower
@@ -43,7 +45,7 @@ Include editor into your html
 | text-preview | Button text for preview | Preview |
 | text-propose-text | Prompt text to as link text | Please provide link text |
 | text-propose-link | Prompt text asking for link url | Please provide link URL |
-| name | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+| name | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
 | required | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
 | minlength  | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
 | maxlength | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |

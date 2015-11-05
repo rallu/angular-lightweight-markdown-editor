@@ -32,7 +32,7 @@
                 textareaElement = element.find("textarea")[0];
                 var form = ctrls[0];
                 var copyAttrToTextarea = [
-                    "name", "required", "minlength", "maxlength", "placeholder", "selectionDirection", "selectionStart", "selectionEnd", "spellcheck"
+                    "name", "required", "minLength", "maxLength", "placeholder", "selectionDirection", "selectionStart", "selectionEnd", "spellcheck"
                 ];
                 angular.forEach(copyAttrToTextarea, function(param) {
                     if (attrs[param]) {

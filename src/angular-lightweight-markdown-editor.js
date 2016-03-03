@@ -25,7 +25,8 @@
                 ngModel: "=",
                 textPreview: "@",
                 textProvideText: "@",
-                textProvideLink: "@"
+                textProvideLink: "@",
+                showPreview: "="
             },
             require: ['^form', 'ngModel'],
             link: function(scope, element, attrs, ctrls) {
@@ -45,6 +46,11 @@
 
     function markdownController($sce) {
         this.preview = false;
+		
+		if(typeof this.showPreview !== "undefined") {        	
+        	this.preview = this.showPreview;
+        } 
+
         this.showdownEnabled = (typeof showdown !== "undefined");
 
         for (var key in translationTexts) {

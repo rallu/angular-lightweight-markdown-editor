@@ -1,30 +1,39 @@
-$main-background: #f2f1f7;
+$main-background: #f8f8f8;
 $editor-background: #fff;
 
 @import "fonts.scss";
-.markdown-editor {
-    background: $main-background;
-    padding: 4px;
-    border-radius: 2px;
 
+markdown-editor {
+    display: block;
+}
+
+.markdown-editor {
     &__actions {
+        display: flex;
         list-style-type: none;
         margin: 0;
-        padding: 0;
-        padding: 2px 0px 6px 0px;
+        padding: 4px;
 
         > li {
-            display: inline-block;
-            padding: 5px 8px 5px 8px;
-            border-radius: 2px;
-            color: #333;
-            background: rgba(0,0,0,0.05);
+            display: block;
+            margin: 0;
+            color: #666;
             cursor: pointer;
-            box-shadow: 0px 0px 1px rgba(0,0,0,0.8);
+            box-shadow: 0px 0.5px 0.5px rgba(0,0,0,0.4);
             user-select: none;
+            height: 20px;
+            width: 20px;
+            padding: 5px;
+            line-height: 20px;
+            text-align: center;
+            background: rgba(255,255,255,0.6);
 
             &:hover {
-                box-shadow: 0px 0px 1px rgba(0,0,0,0.8), inset 0px 0px 2px rgba(0,0,0,0.4);
+                box-shadow: 0px 0px 0.5px rgba(0,0,0,0.4), inset 0px 0px 1px rgba(0,0,0,0.2);
+            }
+
+            &:active {
+                background: rgba(255,255,255,0.8);
             }
 
             &.enabled {
@@ -34,6 +43,19 @@ $editor-background: #fff;
             &.separator {
                 box-shadow: none;
                 background: none;
+                width: 10px;
+            }
+
+            &.preview {
+                width: auto;
+                font-size: 12px;
+                text-transform: uppercase;
+                font-family: sans-serif;
+            }
+
+            i::before {
+                line-height: 20px;
+                font-size: 12px;
             }
         }
     }
@@ -55,12 +77,17 @@ $editor-background: #fff;
         }
 
         textarea {
+            padding: 4px;
             width: 100%;
             min-height: 200px;
             border: none;
             background: $editor-background;
             resize: vertical;
-            font-size: 16px;
+            font-size: 14px;
+
+            &:focus {
+                outline: none;
+            }
         }
     }
 }

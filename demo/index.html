@@ -22,6 +22,18 @@
                 this.data = "# Hello\n\nThis is a markdown test\n\nThese are\ndifferent length\nsentences\nwe need even more\nof these short few word things";
             });
         </script>
+
+        <!-- custom styling example -->
+        <style>
+            markdown-editor {
+                border: 1px solid #ccc;
+                border-radius: 2px;
+            }
+
+            markdown-editor textarea {
+                font-family: monospace;
+            }
+        </style>
     </head>
     <body ng-controller="demoCtrl as ctrl">
         <form name="form">
@@ -31,14 +43,10 @@
                 text-provide-text="Site name"
                 text-provide-link="Site link"
                 name="thearea"
-                max-length="40"
-                min-length="10"
                 placeholder="Input your text"
                 required
                 >
             </markdown-editor>
-
-            <input type="submit" value="Test submit button">
         </form>
     </body>
 </html>

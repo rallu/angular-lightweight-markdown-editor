@@ -1,7 +1,7 @@
 Angular lightweight markdown editor
 ===================================
 
-angular-lightweight-markdown-editor is extremely light weight editor (v0.2.0 12kb including styles) for markdown. It doesn't use any fancy text editors but just that basic `textarea`. 
+angular-lightweight-markdown-editor is extremely light weight editor (v0.2.0 12kb including styles) for markdown. It doesn't use any fancy text editors but just that basic `textarea`.
 
 Requires only angular.js and angular-sanitize.js libraries.
 
@@ -17,8 +17,8 @@ Install using bower
 
 Include CSS and JS to project
 
-> <link  href="angular-lightweight-markdown-editor/dist/angular-lightweight-markdown-editor.css" rel="stylesheet">
-> <script src="angular-lightweight-markdown-editor/dist/angular-lightweight-markdown-editor.min.js"></script>
+    <link  href="angular-lightweight-markdown-editor/dist/angular-lightweight-markdown-editor.css" rel="stylesheet">
+    <script src="angular-lightweight-markdown-editor/dist/angular-lightweight-markdown-editor.min.js"></script>
 
 Add dependecy to your angular application
 
@@ -60,7 +60,7 @@ Include editor into your html
 ## Options
 
 | Key | Type | Description | Default |
-| --------- |:------------|:--------|
+| --------- |:------------|:--------|:--------|
 | controls | Array of strings | Controls to display in toolbar | [ "bold", "italic", "strikethrough", "separator", "heading", "bullets", "indent", "code", "separator", "link", "quote", "separator", "preview" ] |
 
 ## Developing
@@ -69,12 +69,11 @@ Fork, git clone, push and send pull request.
 
 To get started:
 
-> npm install
-> bower install
+    > npm install && bower install
 
 To build release version while developing. This will watch and do release build
 constantly.
 
-> gulp
+    > gulp
 
 To run and test you need to start web server in root of project.

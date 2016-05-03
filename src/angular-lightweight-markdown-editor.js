@@ -14,6 +14,26 @@
         var mdConverter = new showdown.Converter();
     }
 
+    var defaultOptions = {
+        controls: [
+            "bold",
+            "italic",
+            "strikethrough",
+            "separator",
+            "heading",
+            "bullets",
+            "indent",
+            "code",
+            "separator",
+            "link",
+            "quote",
+            "separator",
+            "preview"
+        ]
+    };
+
+    var options = {};
+
     function angularMarkdownEditor() {
         return {
             restrict: "E",
@@ -26,7 +46,8 @@
                 textPreview: "@",
                 textProvideText: "@",
                 textProvideLink: "@",
-                showPreview: "="
+                showPreview: "=",
+                options: "="
             },
             require: ['^form', 'ngModel'],
             link: function(scope, element, attrs, ctrls) {
@@ -73,6 +94,9 @@
             }
             return $sce.trustAsHtml(mdConverter.makeHtml(this.ngModel));
         };
+
+        this.options = angular.extend({}, defaultOptions, this.options);
+        this.icons = icons;
     }
 
     function getSelectionInfo() {
@@ -194,5 +218,17 @@
             }
             return result;
         }
+    };
+
+    var icons = {
+        "bold": "ame-bold",
+        "italic": "ame-italic",
+        "strikethrough": "ame-strikethrough",
+        "heading": "ame-header",
+        "bullets": "ame-list-ul",
+        "indent": "ame-indent",
+        "code": "ame-code",
+        "link": "ame-link",
+        "quote": "ame-quote-right"
     };
 })();

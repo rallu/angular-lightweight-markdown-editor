@@ -1,7 +1,7 @@
 Angular lightweight markdown editor
 ===================================
 
-angular-lightweight-markdown-editor is extremely light weight editor (v0.0.3 12kb) for markdown. It doesn't use any fancy text editors but just that basic `textarea`. This means you can add it to your project without fear of huge transfer sizes.
+angular-lightweight-markdown-editor is extremely light weight editor (v0.2.0 12kb including styles) for markdown. It doesn't use any fancy text editors but just that basic `textarea`. 
 
 Requires only angular.js and angular-sanitize.js libraries.
 
@@ -42,6 +42,7 @@ Include editor into your html
 | Parameter | Description | Default |
 | --------- |:------------|:--------|
 | ng-model  | Data model to use in textarea | |
+| options  | Settings for editor. See options. | |
 | text-preview | Button text for preview | Preview |
 | text-propose-text | Prompt text to as link text | Please provide link text |
 | text-propose-link | Prompt text asking for link url | Please provide link URL |
@@ -55,3 +56,25 @@ Include editor into your html
 | selectionStart | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
 | selectionEnd | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
 | spellcheck | [Default textarea parameter](https://developer.mozilla.org/en/docs/Web/HTML/Element/textarea) | |
+
+## Options
+
+| Key | Type | Description | Default |
+| --------- |:------------|:--------|
+| controls | Array of strings | Controls to display in toolbar | [ "bold", "italic", "strikethrough", "separator", "heading", "bullets", "indent", "code", "separator", "link", "quote", "separator", "preview" ] |
+
+## Developing
+
+Fork, git clone, push and send pull request.
+
+To get started:
+
+> npm install
+> bower install
+
+To build release version while developing. This will watch and do release build
+constantly.
+
+> gulp
+
+To run and test you need to start web server in root of project.

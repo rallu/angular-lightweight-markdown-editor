@@ -19,6 +19,9 @@
             angular.module("demo", [
                 "angular-lightweight-markdown-editor"
             ]).controller("demoCtrl", function() {
+                this.options = {
+                    controls: ["bold", "italic", "separator", "preview"]
+                };
                 this.data = "# Hello\n\nThis is a markdown test\n\nThese are\ndifferent length\nsentences\nwe need even more\nof these short few word things";
             });
         </script>
@@ -45,6 +48,7 @@
                 show-preview="false"
                 name="thearea"
                 placeholder="Input your text"
+                options="ctrl.options"
                 required
                 >
             </markdown-editor>

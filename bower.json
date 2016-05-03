@@ -1,6 +1,6 @@
 {
   "name": "angular-lightweight-markdown-editor",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "authors": [
     "Juha-Pekka Rajaniemi <juha.rajaniemi@gmail.com>"
   ],
@@ -8,7 +8,7 @@
     "dist/angular-lightweight-markdown-editor.min.js",
     "dist/angular-lightweight-markdown-editor.css"
   ],
-  "description": "Visual markdown editor for angular",
+  "description": "Very simple visual markdown editor for angular",
   "keywords": [
     "angular",
     "markdown",
@@ -24,8 +24,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.7",
-    "angular-sanitize": "~1.4.7",
+    "angular": "~1.4.10",
+    "angular-sanitize": "~1.4.10",
     "showdown": "~1.2.3"
   }
 }

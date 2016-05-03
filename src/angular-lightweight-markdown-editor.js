@@ -46,10 +46,10 @@
 
     function markdownController($sce) {
         this.preview = false;
-		
-		if(typeof this.showPreview !== "undefined") {        	
+
+		if(typeof this.showPreview !== "undefined") {
         	this.preview = this.showPreview;
-        } 
+        }
 
         this.showdownEnabled = (typeof showdown !== "undefined");
 
@@ -85,9 +85,17 @@
 
     var actions = {
         bold: function(model, selection) {
+            if (selection.length == 0) {
+                return model;
+            }
+
             return helpers.surraund(model, selection.start, selection.end - selection.start, "**", "**");
         },
         italic: function(model, selection) {
+            if (selection.length == 0) {
+                return model;
+            }
+
             return helpers.surraund(model, selection.start, selection.end - selection.start, "*", "*");
         },
         bullets: function(model, selection) {
@@ -97,6 +105,10 @@
             return helpers.startLinesWith(model, selection.start, selection.end, "#");
         },
         strikethrough: function(model, selection) {
+            if (selection.length == 0) {
+                return model;
+            }
+            
             return helpers.surraund(model, selection.start, selection.end - selection.start, "--", "--");
         },
         indent: function(model, selection) {
@@ -106,6 +118,10 @@
             return helpers.startLinesWith(model, selection.start, selection.end, "> ");
         },
         code: function(model, selection) {
+            if (selection.length == 0) {
+                return model;
+            }
+
             var startpos = model.substr(0, selection.start).lastIndexOf("\n") + 1;
             var nextNewLine = model.substr(selection.end).indexOf("\n");
             if (nextNewLine == -1) {

@@ -89,14 +89,14 @@
                 return model;
             }
 
-            return helpers.surraund(model, selection.start, selection.end - selection.start, "**", "**");
+            return helpers.surround(model, selection.start, selection.end - selection.start, "**", "**");
         },
         italic: function(model, selection) {
             if (selection.length == 0) {
                 return model;
             }
 
-            return helpers.surraund(model, selection.start, selection.end - selection.start, "*", "*");
+            return helpers.surround(model, selection.start, selection.end - selection.start, "*", "*");
         },
         bullets: function(model, selection) {
             return helpers.startLinesWith(model, selection.start, selection.end, "* ");
@@ -108,8 +108,8 @@
             if (selection.length == 0) {
                 return model;
             }
-            
-            return helpers.surraund(model, selection.start, selection.end - selection.start, "--", "--");
+
+            return helpers.surround(model, selection.start, selection.end - selection.start, "--", "--");
         },
         indent: function(model, selection) {
             return helpers.startLinesWith(model, selection.start, selection.end, "\t");
@@ -162,7 +162,7 @@
 
 
     var helpers = {
-        surraund: function(text, start, length, before, after) {
+        surround: function(text, start, length, before, after) {
             var between = text.substr(start, length);
             return [
                 text.substr(0, start),

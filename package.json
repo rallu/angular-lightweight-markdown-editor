@@ -1,6 +1,6 @@
 {
   "name": "angular-lightweight-markdown-editor",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "description": "Visual markdown editor for angular",
   "main": "index.js",
   "directories": {

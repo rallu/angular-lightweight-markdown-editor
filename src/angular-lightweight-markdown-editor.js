@@ -21,7 +21,10 @@
             "strikethrough",
             "separator",
             "heading",
+            "heading2",
+            "heading3",
             "bullets",
+            "numbers",
             "indent",
             "code",
             "separator",
@@ -125,8 +128,17 @@
         bullets: function(model, selection) {
             return helpers.startLinesWith(model, selection.start, selection.end, "* ");
         },
+        numbers: function(model, selection) {
+            return helpers.startLinesWith(model, selection.start, selection.end, "1. ");
+        },
         heading: function(model, selection) {
             return helpers.startLinesWith(model, selection.start, selection.end, "#");
+        },
+        heading2: function(model, selection) {
+            return helpers.startLinesWith(model, selection.start, selection.end, "##");
+        },
+        heading3: function(model, selection) {
+            return helpers.startLinesWith(model, selection.start, selection.end, "###");
         },
         strikethrough: function(model, selection) {
             if (selection.length == 0) {
@@ -225,7 +237,10 @@
         "italic": "ame-italic",
         "strikethrough": "ame-strikethrough",
         "heading": "ame-header",
+        "heading2": "ame-header",
+        "heading3": "ame-header",
         "bullets": "ame-list-ul",
+        "numbers": "ame-list-ol",
         "indent": "ame-indent",
         "code": "ame-code",
         "link": "ame-link",

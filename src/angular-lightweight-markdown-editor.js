@@ -208,7 +208,7 @@
                 text.substr(start + length)
             ].join("");
         },
-        startLinesWith: function(text, start, end, startWith, iterator) {
+        startLinesWith: function(text, start, end, startWith) {
             var lineStartPositions = helpers.indexes(text.substr(start, end - start), "\n", start);
             var firstpos = text.substr(0, start).lastIndexOf("\n") + 1;
             text = [text.substr(0, firstpos), startWith, text.substr(firstpos)].join("");

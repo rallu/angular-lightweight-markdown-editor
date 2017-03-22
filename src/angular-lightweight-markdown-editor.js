@@ -95,7 +95,8 @@
             if (!this.showdownEnabled) {
                 return "";
             }
-            return $sce.trustAsHtml(mdConverter.makeHtml(this.ngModel));
+		// Removing $sce.trustAsHtml allows ngSanitize to work on the HTML and provides XSS prevention
+            return mdConverter.makeHtml(this.ngModel);
         };
 
         this.options = angular.extend({}, defaultOptions, this.options);

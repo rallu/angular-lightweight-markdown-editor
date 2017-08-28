@@ -3,7 +3,6 @@
         "ngSanitize"
     ]).directive("markdownEditor", angularMarkdownEditor);
 
-    var textareaElement;
     var translationTexts = {
         "textPreview": "Preview",
         "textProvideText": "Please provide link text",
@@ -54,21 +53,21 @@
             },
             require: ['^form', 'ngModel'],
             link: function(scope, element, attrs, ctrls) {
-                textareaElement = element.find("textarea")[0];
+                scope.textareaElement = element.find("textarea")[0];
                 var form = ctrls[0];
                 var copyAttrToTextarea = [
                     "name", "required", "minLength", "maxLength", "placeholder", "selectionDirection", "selectionStart", "selectionEnd", "spellcheck"
                 ];
                 angular.forEach(copyAttrToTextarea, function(param) {
                     if (attrs[param]) {
-                        textareaElement[param] = attrs[param];
+                        scope.textareaElement[param] = attrs[param];
                     }
                 });
             }
         }
     }
 
-    function markdownController($sce) {
+    function markdownController($sce, $scope) {
         this.preview = false;
 
 		if(typeof this.showPreview !== "undefined") {
@@ -85,7 +84,7 @@
         this.translations = translationTexts;
 
         this.action = function(name) {
-            var result = actions[name](this.ngModel, getSelectionInfo());
+            var result = actions[name](this.ngModel, getSelectionInfo($scope.textareaElement));
             if (result !== false) {
                 this.ngModel = result;
             }
@@ -103,7 +102,7 @@
         this.icons = icons;
     }
 
-    function getSelectionInfo() {
+    function getSelectionInfo(textareaElement) {
         return {
             start: textareaElement.selectionStart,
             end: textareaElement.selectionEnd,
